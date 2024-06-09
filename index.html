@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juliano Costa - Mario`s Jump</title>
+</head>
+
+<body>
+  <div class="game">
+    <img class="mario" src="img/mario.gif" alt="mario">
+    <img class="pipe" src="img/pipe.png" alt="cano">
+    <img class="clouds" src="img/clouds.png" alt="nuvem">
+    <button class="start">Valendo um café para o Top 1 do Rank.</button>
+    <div class="timer">
+      <span id="time">0</span> segundos
+    </div>
+    <div class="instructions">
+      <p>Pressione a barra de espaço para pular!</p>
+    </div>
+  </div>
+
+  <div class="game-over">
+    <h1>Game Over :(</h1>
+    <button onclick="restartGame()">Reiniciar</button>
+  </div>
+
+  <div class="user-input">
+    <input type="text" id="playerName" placeholder="Seu Nome">
+    <button onclick="submitName()">Enviar Nome e Iniciar... Boa Sorte !</button>
+  </div>
+
+  <div class="ranking">
+    <h2>Ranking dos 10 Melhores Jogadores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Posição</th>
+          <th>Nome do Jogador</th>
+          <th>Tempo (s)</th>
+        </tr>
+      </thead>
+      <tbody id="rankTableBody">
+        <!-- Aqui serão inseridos os dados do ranking -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

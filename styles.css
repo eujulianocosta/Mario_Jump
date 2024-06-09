@@ -1,0 +1,246 @@
+/* Reset de estilos para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos comuns para botões */
+button,
+.start,
+/* Estilos para o botão "Reiniciar" */
+.restart {
+  /* Defina os estilos comuns para botões */
+  background: green;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
+
+  /* Posicione o botão no centro dos 70% da tela */
+  position: absolute;
+  top: 50%; /* Coloca o topo do botão no meio da tela */
+  left: 50%; /* Coloca a esquerda do botão no meio da tela */
+  transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+}
+
+button:hover,
+.start:hover,
+.restart:hover {
+  border: 2px solid green;
+  background: none;
+  color: green;
+}
+
+/* Estilos para o contêiner do jogo */
+.game,
+.game-over {
+  width: 100%;
+  height: 70vh; /* O jogo ocupa 70% da altura da tela */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.game {
+  border-bottom: 30px solid green;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos para o contêiner de game-over */
+.game-over {
+  background: rgba(0, 0, 0, 0.322);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* O contêiner de game-over cobre a tela inteira */
+}
+
+.game-over h1 {
+  font-size: 3rem;
+  color: red;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+/* Estilos para os elementos de cano e Mario */
+.pipe {
+  position: absolute;
+  bottom: 0;
+  right: -80px;
+  width: 80px;
+}
+
+.mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Animação das nuvens */
+.clouds {
+  width: 550px;
+  position: absolute;
+  top: 0;
+  animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Animação do cano */
+.pipe-animation {
+  animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Adicionar estilos para a instrução */
+.instructions {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+/* Centralizar texto dentro da instrução */
+.instructions p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilo para o contêiner de jogo inteiro (ajuste conforme necessário) */
+.game {
+  /* Estilos de .game existentes ... */
+  position: relative;
+}
+
+/* Animação de salto */
+.jump {
+  animation: jump 800ms ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 200px;
+  }
+  50% {
+    bottom: 200px;
+  }
+  60% {
+    bottom: 200px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/* Estilos responsivos adicionais, se necessário */
+@media screen and (max-width: 768px) {
+  /* Adicionar estilos responsivos aqui */
+}
+
+/* Centralizar os botões no meio dos 70% da tela */
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container button {
+  display: block;
+  margin: 10px auto;
+}
+/* O código CSS anterior permanece inalterado */
+
+/* Estilos para a entrada de nome do jogador */
+.user-input {
+  text-align: center;
+  margin: 20px;
+}
+
+.user-input input {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.user-input button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Estilos para a tabela de classificação */
+.ranking {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #000;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+th {
+  background-color: #87ceeb;
+}
+
+/* Adicione mais estilos conforme necessário */
+/* Estilizar o cronômetro */
+.timer {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: white; /* Cor do texto */
+  background-color: green; /* Cor de fundo do cronômetro */
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra ao redor do cronômetro */
+  position: fixed; /* Fixar o cronômetro na tela */
+  top: 80px; /* Posição vertical na tela */
+  left: 50%; /* Centralizar horizontalmente */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  z-index: 9999; /* Valor alto para estar sempre à frente */
+}
